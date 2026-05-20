@@ -18,11 +18,12 @@
 
         try {
             $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $password);
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);    
-            
-            echo json_stream(["status" => "sucesso", "mensagem" => "Conectado ao MySQL com sucesso via Docker!"]);
+            $pdo->exec("SET CHARACTER SET utf8");
         } catch (PDOException $e) {
             echo json_encode(["status" => "erro", "mensagem" => "Falha na conexão: " . $e->getMessage()]);
+            die;
         }
+
+        return $pdo;
     }
 

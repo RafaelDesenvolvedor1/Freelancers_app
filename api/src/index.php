@@ -2,7 +2,10 @@
 
     require_once 'config.php';
 
-    connect();
- 
+    require_once 'initTables.php';
 
-    function json_stream($array) { return json_encode($array, JSON_UNESCAPED_UNICODE); }
+    // Estabelecendo a conexão e criando as tabelas
+    $pdo = connect();
+    createTables($pdo);
+
+    
