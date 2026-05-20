@@ -1,0 +1,35 @@
+{
+  "name": "Flutter Development Environment",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Dart-Code.flutter",
+        "Dart-Code.dart"
+      ]
+    }
+  },
+  "runArgs": [
+    "--network=plataformafreelancers_app-network" 
+  ],
+  "forwardPorts": [8085],
+  "portsAttributes": {
+    "8085": {
+      "label": "Flutter Web Server",
+      "onAutoForward": "openBrowser",
+      // Garante que a porta seja aberta publicamente na interface de rede do Linux
+      "visibility": "public" 
+    }
+  },
+  "otherPortsAttributes": {
+    "onAutoForward": "ignore"
+  },
+  
+  "devPortManager": "local",
+  "remoteUser": "developer",
+  
+  // MÁGICA DA AUTOMAÇÃO: Roda o comando automaticamente assim que o container estiver pronto
+  "postCreateCommand": "cd freelancers_app && flutter pub get"
+}
