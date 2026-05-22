@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
+import 'package:freelancers_app/screens/discover_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,10 +12,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: const Text('Facul App - Flutter & Docker')),
-        body: const ApiTestWidget(),
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: const Color(0xFF0F172A),
+          colorScheme: ColorScheme.dark(
+            primary: const Color(0xFF6366F1),
+        ),
       ),
+      home: DiscoverScreen()
     );
   }
 }
