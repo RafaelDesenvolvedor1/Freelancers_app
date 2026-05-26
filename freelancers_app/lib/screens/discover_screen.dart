@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:freelancers_app/screens/developer_details_screen.dart';
 
 // O Widget que representa a tela
 class DiscoverScreen extends StatefulWidget {
@@ -97,48 +98,64 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
             isLoading
                 ? const Expanded(
                     child: Center(
-                      child: CircularProgressIndicator(color: Color(0xff5366f1)),
+                      child: CircularProgressIndicator(
+                        color: Color(0xff5366f1),
+                      ),
                     ),
-                )
-            : Expanded(
-              child: ListView.builder(
-                itemCount: freelancers.length,
-                itemBuilder: (context, index) {
-                  final freelancer = freelancers[index] as Map<String, dynamic>;
+                  )
+                : Expanded(
+                    child: ListView.builder(
+                      itemCount: freelancers.length,
+                      itemBuilder: (context, index) {
+                        final freelancer =
+                            freelancers[index] as Map<String, dynamic>;
 
-                  return Card(
-                    color: const Color(0xFF1E293B),
-                    margin: const EdgeInsets.symmetric(
-                      horizontal: 16,
-                      vertical: 8,
+                        return Card(
+                          color: const Color(0xFF1E293B),
+                          margin: const EdgeInsets.symmetric(
+                            horizontal: 16,
+                            vertical: 8,
+                          ),
+                          child: ListTile(
+                            titleAlignment: ListTileTitleAlignment.center,
+                            leading: const CircleAvatar(
+                              backgroundColor: Color(0xFF0F172A),
+                              child: Icon(
+                                Icons.person,
+                                color: Color(0xFF6366F1),
+                              ),
+                            ),
+                            title: Text(
+                              freelancer['nome'] ?? '',
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            subtitle: Text(
+                              '${freelancer['email'] ?? 'Não informado'}\n${freelancer['telefone'] ?? 'Não informado'}',
+                              style: const TextStyle(color: Colors.grey),
+                            ),
+                            isThreeLine: true,
+                            trailing: const Icon(
+                              Icons.chevron_right,
+                              color: Colors.grey,
+                            ),
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => DeveloperDetailsScreen(
+                                    freelancer: freelancer,
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+                        );
+                      },
                     ),
-                    child: ListTile(
-                      titleAlignment: ListTileTitleAlignment.center,
-                      leading: const CircleAvatar(
-                        backgroundColor: Color(0xFF0F172A),
-                        child: Icon(Icons.person, color: Color(0xFF6366F1)),
-                      ),
-                      title: Text(
-                        freelancer['nome'] ?? '',
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                      subtitle: Text(
-                        '${freelancer['email'] ?? 'Não informado'}\n${freelancer['telefone'] ?? 'Não informado'}',
-                        style: const TextStyle(color: Colors.grey),
-                      ),
-                      isThreeLine: true,
-                      trailing: const Icon(
-                        Icons.chevron_right,
-                        color: Colors.grey,
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
+                  ),
           ],
         ),
       ),
