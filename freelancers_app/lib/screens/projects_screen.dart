@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:freelancers_app/screens/new_project_screen.dart';
 
 class MyProjectsScreen extends StatefulWidget {
   const MyProjectsScreen({super.key});
@@ -36,12 +37,12 @@ class _MyProjectsScreenState extends State<MyProjectsScreen> {
 
   // � Lógica condicional para definir a cor de fundo da badge de status
   Color _getBadgeBgColor(String status) {
-    switch (status.toLowerCase()) {
-      case 'em andamento':
+    switch (status) {
+      case 'Em andamento':
         return const Color(0xFF1E3A8A).withOpacity(0.4); // Azul escuro suave
-      case 'pendente':
+      case 'Pendente':
         return const Color(0xFF78350F).withOpacity(0.4); // Laranja suave
-      case 'concluído':
+      case 'Concluído':
         return const Color(0xFF064E3B).withOpacity(0.4); // Verde suave
       default:
         return const Color(0xFF334155);
@@ -50,12 +51,12 @@ class _MyProjectsScreenState extends State<MyProjectsScreen> {
 
   // � Lógica condicional para definir a cor do texto da badge de status
   Color _getBadgeTextColor(String status) {
-    switch (status.toLowerCase()) {
-      case 'em andamento':
+    switch (status) {
+      case 'Em andamento':
         return const Color(0xFF3B82F6); // Azul vivo
-      case 'pendente':
+      case 'Pendente':
         return const Color(0xFFF59E0B); // Laranja vivo
-      case 'concluído':
+      case 'Concluído':
         return const Color(0xFF10B981); // Verde vivo
       default:
         return Colors.white;
@@ -189,7 +190,7 @@ class _MyProjectsScreenState extends State<MyProjectsScreen> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: const Color(0xFF6366F1),
         onPressed: () {
-          // TODO: Implementar Navigator.push para a tela Novo Projeto �
+          Navigator.push(context, MaterialPageRoute(builder: (context) => const NewProjectScreen()));
         },
         child: const Icon(Icons.add, color: Colors.white),
       ),
