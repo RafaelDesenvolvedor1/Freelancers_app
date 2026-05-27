@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:freelancers_app/screens/discover_screen.dart';
+import 'package:freelancers_app/screens/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
             primary: const Color(0xFF6366F1),
         ),
       ),
-      home: DiscoverScreen()
+      home: const MainScreen(),
     );
   }
 }
