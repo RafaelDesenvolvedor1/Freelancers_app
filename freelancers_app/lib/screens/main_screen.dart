@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:freelancers_app/screens/discover_screen.dart';
 import 'package:freelancers_app/screens/payments_screen.dart';
 import 'package:freelancers_app/screens/projects_screen.dart';
+import 'package:freelancers_app/screens/reviews_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -18,7 +19,8 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> _telas = [
     const DiscoverScreen(),   // Aba 0: Descobrir
     const MyProjectsScreen(), // Aba 1: Projetos
-    const PaymentsScreen()   // Aba 2: Pagamentos
+    const PaymentsScreen(),
+    const ReviewsScreen()   // Aba 2: Avaliações
   ];
 
   @override
@@ -55,6 +57,10 @@ class _MainScreenState extends State<MainScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.monetization_on_outlined),
             label: 'Pagamentos',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.star_outline),
+            label: 'Avaliações',
           ),
         ],
       ),
