@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
-import 'package:freelancers_app/screens/discover_screen.dart';
 import 'package:freelancers_app/screens/main_screen.dart';
 
 void main() {
