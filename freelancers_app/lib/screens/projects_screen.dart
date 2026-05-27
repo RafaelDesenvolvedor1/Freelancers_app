@@ -42,7 +42,6 @@ class _MyProjectsScreenState extends State<MyProjectsScreen> {
       case 'pendente':
         return const Color(0xFF78350F).withOpacity(0.4); // Laranja suave
       case 'concluído':
-      case 'concluido':
         return const Color(0xFF064E3B).withOpacity(0.4); // Verde suave
       default:
         return const Color(0xFF334155);
@@ -57,7 +56,6 @@ class _MyProjectsScreenState extends State<MyProjectsScreen> {
       case 'pendente':
         return const Color(0xFFF59E0B); // Laranja vivo
       case 'concluído':
-      case 'concluido':
         return const Color(0xFF10B981); // Verde vivo
       default:
         return Colors.white;
