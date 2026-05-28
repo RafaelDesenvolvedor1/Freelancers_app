@@ -1,14 +1,14 @@
-# � Freelancers App
+# 📱 Freelancers App
 
 Plataforma mobile para conectar **clientes** e **freelancers**, com gestão completa de projetos, pagamentos e avaliações.
 
 Desenvolvido com **Flutter** no front-end e **PHP** no back-end, com banco de dados **MySQL** e infraestrutura via **Docker**.
 
-> � O app Flutter roda dentro de um **Dev Container** — não é necessário ter o Flutter instalado nativamente na sua máquina.
+> 💡 O app Flutter roda dentro de um **Dev Container** — não é necessário ter o Flutter instalado nativamente na sua máquina.
 
 ---
 
-## � Tecnologias Utilizadas
+## 🧱 Tecnologias Utilizadas
 
 | Camada       | Tecnologia          |
 |--------------|---------------------|
@@ -21,7 +21,7 @@ Desenvolvido com **Flutter** no front-end e **PHP** no back-end, com banco de da
 
 ---
 
-## � Como Executar
+## 🚀 Como Executar
 
 ### Pré-requisitos
 
@@ -81,7 +81,7 @@ flutter run -d web-server --web-port=8085 --web-hostname=0.0.0.0
 
 ---
 
-## � API — Rotas Disponíveis
+## 📡 API — Rotas Disponíveis
 
 Base URL: `http://localhost:8000`
 
@@ -136,7 +136,7 @@ Para a documentação completa de campos e rotas, consulte o arquivo [`ROUTES.md
 
 ---
 
-## � Telas do Aplicativo
+## 📱 Telas do Aplicativo
 
 | Tela                  | Descrição                                           |
 |-----------------------|-----------------------------------------------------|
@@ -149,7 +149,7 @@ Para a documentação completa de campos e rotas, consulte o arquivo [`ROUTES.md
 
 ---
 
-## �️ Banco de Dados
+## 🗄️ Banco de Dados
 
 - **SGBD:** MySQL 8.0
 - **Database:** `facul_db`
@@ -160,7 +160,7 @@ Acesse o Adminer em [http://localhost:8080](http://localhost:8080) para inspecio
 
 ---
 
-## � Variáveis de Ambiente (API)
+## 🐳 Variáveis de Ambiente (API)
 
 Configuradas no `docker-compose.yml`:
 
@@ -173,6 +173,6 @@ DB_PASSWORD=flutter_password
 
 ---
 
-## � Licença
+## 📄 Licença
 
 Este projeto foi desenvolvido para fins acadêmicos.
